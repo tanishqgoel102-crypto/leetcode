@@ -25,8 +25,9 @@ public:
         for(int i=1;i<nums.size();i++){
             if(count==0){
                 candidate=nums[i];
+                count++;
             }
-            if(candidate==nums[i]){
+            else if(candidate==nums[i]){
                 count++;
             }
             else{
