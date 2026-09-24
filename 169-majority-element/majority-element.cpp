@@ -20,21 +20,21 @@ public:
         // sort(nums.begin(),nums.end());
         // return nums[nums.size()/2];
 
-        int candidate=nums[0];
-        int count=1; 
-        for(int i=1;i<nums.size();i++){
-            if(count==0){
-                candidate=nums[i];
-                count++;
-            }
-            else if(candidate==nums[i]){
-                count++;
-            }
-            else{
-                count--;
-            }
+        // int candidate=nums[0];
+        // int count=1; 
+        // for(int i=1;i<nums.size();i++){
+        //     if(count==0){
+        //         candidate=nums[i];
+        //         count++;
+        //     }
+        //     else if(candidate==nums[i]){
+        //         count++;
+        //     }
+        //     else{
+        //         count--;
+        //     }
             
-        } return candidate;
+        // } return candidate;
         // int finalcount=0;
         // int ans=-1;
         // for(int i=0;i<nums.size();i++){
@@ -45,5 +45,14 @@ public:
         //         ans=nums[i];
         //     }
         // } return ans;
+
+        unordered_map<int,int>mp;
+        for(int x:nums){
+            mp[x]++;
+            if(mp[x]>nums.size()/2){
+                return x;
+            }
+        }
+        return -1;
     }
 };
